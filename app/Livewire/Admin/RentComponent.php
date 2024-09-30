@@ -24,14 +24,13 @@ class RentComponent extends Component
 
     public function store()
     {
-
         $this->validate([
             'full_name' => 'required|string',
             'city' => 'required|string',
             'address' => 'required|string',
             'phone' => 'nullable|string',
             'email' => 'nullable|email',
-            'date_of_birth' => 'nullable|date',
+            'date_of_birth' => 'required|date',
             'gender' => 'nullable|string',
             'state' => 'nullable|string',
             'postal_code' => 'nullable|string',
@@ -40,25 +39,35 @@ class RentComponent extends Component
             'identification_type' => 'nullable|string'
         ]);
 
-        Client::create([
+        $client = Client::create([
             'full_name' => $this->full_name,
-            'date_of_birth' => $this->date_of_birth,
-            'gender' => $this->gender,
-            'phone' => $this->phone,
-            'email' => $this->email,
+            'date_of_birth' => !empty($this->date_of_birth) ? $this->date_of_birth : null,
+            'gender' => !empty($this->gender) ? $this->gender : null,
+            'phone' => !empty($this->phone) ? $this->phone : null,
+            'email' => !empty($this->email) ? $this->email : null,
             'address' => $this->address,
             'city' => $this->city,
-            'state' => $this->state,
-            'postal_code' => $this->postal_code,
-            'country' => $this->country,
-            'identification_number' => $this->identification_number,
-            'identification_type' => $this->identification_type,
+            'state' => !empty($this->state) ? $this->state : null,
+            'postal_code' => !empty($this->postal_code) ? $this->postal_code : null,
+            'country' => !empty($this->country) ? $this->country : null,
+            'identification_number' => !empty($this->identification_number) ? $this->identification_number : null,
+            'identification_type' => !empty($this->identification_type) ? $this->identification_type : null,
+        ]);
+
+        $cliente = Client::findOrFail($client->id);
+        $this->client_id = $cliente->id;
+        $this->dispatch('clientAdd', [
+            'message' => 'Cliente Seleccionado.',
+            'client' => $cliente->full_name,
+            'phone' => $cliente->phone,
+            'address' => $cliente->address
         ]);
 
         $this->resetInputFields();
 
         $this->dispatch('clientStore', ['message' => 'Cliente creado exitosamente.']);
     }
+
 
     private function resetInputFields()
     {
@@ -96,8 +105,8 @@ class RentComponent extends Component
         ]);
 
         Rent::create([
-            'note'=> $this->note,
-            'client_id'=> $this->client_id,
+            'note' => $this->note,
+            'client_id' => $this->client_id,
             'room_id' => $this->room->id
         ]);
 

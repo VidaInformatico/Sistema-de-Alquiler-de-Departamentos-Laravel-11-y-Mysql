@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('state')->nullable(); //Estado
             $table->string('postal_code')->nullable(); //Codigo Postal
             $table->string('country')->nullable(); // Pais
-            $table->string('identification_number')->unique(); //Numero de Identidad
-            $table->string('identification_type'); //Tipo de Identidad
+            $table->string('identification_number')->nullable(); //Numero de Identidad
+            $table->string('identification_type')->nullable(); //Tipo de Identidad
             $table->timestamps();
         });
     }
