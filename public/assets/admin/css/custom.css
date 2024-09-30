@@ -1,0 +1,131 @@
+/* Sobrescribiendo los colores de bg-danger y bg-success */
+.bg-danger {
+    background-color: #f44336 !important;
+}
+
+.bg-success {
+    background-color: #4caf50 !important;
+}
+
+.bg-info {
+    background-color: #2196f3 !important; /* Color azul de Material UI */
+    color: white; /* Color del texto */
+}
+
+/* Badge Warning */
+.bg-warning {
+    background-color: #ff9800; /* Color naranja de Material UI */
+    color: white; /* Color del texto */
+}
+
+.btn-info {
+    background-color: #2196f3;
+    border-color: #2196f3;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #f44336;
+    border-color: #f44336;
+    color: white;
+}
+
+.btn-warning {
+    background-color: #ff9800;
+    border-color: #ff9800;
+    color: white;
+}
+
+.btn-success {
+    background-color: #4caf50;
+    border-color: #4caf50;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #9c27b0;
+    border-color: #9c27b0;
+    color: white;
+}
+
+/* Personalizar alertas de Bootstrap a colores de Material UI */
+
+/* Alerta Success */
+.alert-success {
+    background-color: #4caf50; /* Color verde de Material UI */
+    color: white; /* Color del texto */
+    border-color: #4caf50; /* Color del borde */
+}
+
+/* Alerta Danger */
+.alert-danger {
+    background-color: #f44336; /* Color rojo de Material UI */
+    color: white; /* Color del texto */
+    border-color: #f44336; /* Color del borde */
+}
+
+/* Personalizar tablas de Bootstrap a colores de Material UI */
+
+/* Encabezado de tabla */
+.table thead th {
+    background-color: #3f51b5; /* Color índigo de Material UI */
+    color: white; /* Color del texto */
+}
+
+/* Fila de tabla para success */
+.table-success, .table-success > th, .table-success > td {
+    background-color: #4caf50; /* Color verde de Material UI */
+    color: white; /* Color del texto */
+}
+
+/* Fila de tabla para danger */
+.table-danger, .table-danger > th, .table-danger > td {
+    background-color: #f44336; /* Color rojo de Material UI */
+    color: white; /* Color del texto */
+}
+
+/* Fila de tabla para warning */
+.table-warning, .table-warning > th, .table-warning > td {
+    background-color: #ff9800; /* Color naranja de Material UI */
+    color: white; /* Color del texto */
+}
+
+/* Fila de tabla para info */
+.table-info, .table-info > th, .table-info > td {
+    background-color: #2196f3; /* Color azul de Material UI */
+    color: white; /* Color del texto */
+}
+
+/* Fila de tabla para secondary */
+.table-secondary, .table-secondary > th, .table-secondary > td {
+    background-color: #9c27b0; /* Color púrpura de Material UI */
+    color: white; /* Color del texto */
+}
+
+/* Estilos personalizados para inputs */
+
+.form-control {
+    border: 1px solid #ced4da; /* Borde gris claro */
+    border-radius: 0.25rem; /* Radio de borde redondeado */
+    box-shadow: none; /* Quitar sombra predeterminada */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el enfoque */
+}
+
+/* Agregar un contorno moderno al enfocar */
+.form-control:focus {
+    border-color: #3f51b5; /* Color del borde en enfoque (Índigo de Material UI) */
+    box-shadow: 0 0 0 0.2rem rgba(63, 81, 181, 0.25); /* Sombra de enfoque */
+    outline: none; /* Quitar el contorno por defecto del navegador */
+}
+
+/* Input en estado de error */
+.form-control.is-invalid {
+    border-color: #f44336; /* Color rojo de Material UI */
+    box-shadow: 0 0 0 0.2rem rgba(244, 67, 54, 0.25); /* Sombra de enfoque en error */
+}
+
+/* Input en estado de éxito */
+.form-control.is-valid {
+    border-color: #4caf50; /* Color verde de Material UI */
+    box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25); /* Sombra de enfoque en éxito */
+}
